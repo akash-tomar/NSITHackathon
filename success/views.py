@@ -35,6 +35,7 @@ def home(request):
 				response.set_cookie('id', str(c))
 				return response
 			else:
+				print(settings.RESULT,"RRRR")
 				v=Variations.objects.all()
 				for vv in v:
 					
@@ -57,6 +58,7 @@ def home(request):
 				response=render(request,str(request.COOKIES.get("id"))+".html")
 				return response
 			else:
+				print(settings.RESULT,"sssss")
 				v=Variations.objects.all()
 				for vv in v:
 					
@@ -90,7 +92,8 @@ def input(request):
 			settings.AA=datetime.now()
 			settings.FLAG2=0
 			settings.FLAG=0
-		return HttpResponse("Done")
+			settings.RESULT=0
+		return HttpResponse("The system has started")
 	
 	else:
 		form=Requirements()
@@ -136,5 +139,5 @@ def success(request):
 				print(vv,"found")
 				vv.success+=1
 				vv.save()
-		return HttpResponse("Done")	
+		return HttpResponse("Your Response has been recorded")	
 
