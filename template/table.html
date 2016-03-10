@@ -1,0 +1,29 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+
+<head>
+		<title>HACKATHON</title>
+		<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+		<link rel="stylesheet" href="{% static 'css/bootstrap-theme.min.css' %}">
+		<script src="{% static 'js/jquery.min.js' %}"></script>
+		<script src="{% static 'js/bootstrap.min.js' %}"></script>
+</head>
+<body>
+<div class='fluid-container'>
+	<div class='col-md-8 col-md-offset-2'>
+		<h2>Result</h2>
+		<br><br>
+		{% for l in list %}{{ forloop.counter }}
+			<div class="progress">
+		  		<div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow=" {{ l.0 }} "  aria-valuemax="100" style="width: {{ l.0 }}%">
+		    	<span class="sr-only">{{ l.0 }} Complete (success)</span>
+		  		</div>
+		  		<p></p>
+			</div>
+			<p>{{ l.0 }}% ( Sucess={{ l.1 }},Rate={{ l.2 }})</p>
+		{% endfor %}
+	</div>
+</div>
+</body>
+</html>

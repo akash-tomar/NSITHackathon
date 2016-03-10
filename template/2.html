@@ -1,0 +1,34 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+		<title>HACKATHON</title>
+		<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+		<link rel="stylesheet" href="{% static 'css/bootstrap-theme.min.css' %}">
+		<script src="{% static 'js/jquery.min.js' %}"></script>
+		<script src="{% static 'js/bootstrap.min.js' %}"></script>
+</head>
+<body>
+
+	<div class='fluid-container'>
+		<nav class="navbar navbar-inverse">
+ 
+		</nav>
+		
+	<div class="jumbotron">
+			
+				  <h1>Page 2</h1>
+					<form method="POST" action="/success/">{% csrf_token %}
+					<input type="hidden" name="Page" value="2"> 
+						<input type="submit" value="Submit" class='btn btn-default'>
+					</form>
+					<br><br>
+					<p><pre>  <pre>A/B Testing Hackathon. NSIT, Delhi.</p>
+			
+	</div>
+		
+	
+</div>
+
+</body>
+</html>
